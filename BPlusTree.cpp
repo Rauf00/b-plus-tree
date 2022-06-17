@@ -18,10 +18,10 @@ BPlusTree::BPlusTree(int aNumOfKeys) {
 
 bool BPlusTree::insertToNode(BPTreeNode* node, int key, string* value) {
     int i = 0; 
-    while (i < node->keys.size() && key > node->keys.at(i)){
+    while (i < (int) node->keys.size() && key > node->keys.at(i)){
         i++;
     }
-    if (i == node->keys.size()) { 
+    if (i == (int) node->keys.size()) { 
         node->keys.at(node->currNumOfKeys) = key;
         node->values.at(node->currNumOfKeys) = value;
         node->currNumOfKeys += 1;
@@ -39,10 +39,10 @@ bool BPlusTree::insertToNode(BPTreeNode* node, int key, string* value) {
 
 bool BPlusTree::insertToParentNode(BPTreeNode* node, int key, BPTreeNode* child) {
     int i = 0; 
-    while (i < node->keys.size() && key > node->keys.at(i)){
+    while (i < (int) node->keys.size() && key > node->keys.at(i)){
         i++;
     }
-    if (i == node->keys.size()) { 
+    if (i == (int) node->keys.size()) { 
         node->keys.at(node->currNumOfKeys) = key;
         node->children.at(node->currNumOfKeys + 1) = child;
         node->currNumOfKeys += 1;
@@ -235,7 +235,7 @@ BPTreeNode* BPlusTree::findLeaf(int key, bool rangeFlag) {
 string BPlusTree::find(int key) {
     BPTreeNode* leaf = findLeaf(key, false);
     if (leaf != NULL) {
-        for (int i = 0; i < leaf->keys.size(); i++) {
+        for (int i = 0; i < (int) leaf->keys.size(); i++) {
             if(leaf->keys.at(i) == key) {
                 cout << "found at " << i<<endl;
                 return *leaf->values.at(i);
