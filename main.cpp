@@ -6,12 +6,6 @@ using namespace std;
 int main() {
     cout << "Start..."<< endl;
     
-    // BPTreeNode node = BPTreeNode(vect1, vect2);
-    // vector<int> keys = node.getKeys();
-    // for(int i=0; i < keys.size(); i++) {
-    //     cout << keys.at(i) << endl;
-    // }
-
     BPlusTree tree = BPlusTree(3);
     tree.insert(2, "two");
     tree.printKeys();
@@ -48,6 +42,38 @@ int main() {
     cout << "----------------" << endl;
 
     tree.insert(9, "nine");
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.insert(7, "seven");
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.insert(31, "thirty-one");
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.insert(45, "forty five");
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.insert(51, "fifty-one");
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.insert(60, "sixty");
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.insert(39, "thirty-nine");
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.insert(97, "ninty-seven");
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.insert(77, "seventy-seven");
     tree.printKeys();
     cout << "----------------" << endl;
 

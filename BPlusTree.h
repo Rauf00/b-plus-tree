@@ -12,8 +12,9 @@ class BPlusTree {
         BPTreeNode* findLeaf(int key, bool rangeFlag);
         bool insertToNode(BPTreeNode* node, int key, string* value);
         BPTreeNode* getLeftBottomLeaf(BPTreeNode* root);
-        bool insertToParent(BPTreeNode* node, BPTreeNode* child, int key, string value);
+        bool insertToParent(BPTreeNode* node, BPTreeNode* child, int key);
         bool insertToParentNode(BPTreeNode* node, int key, BPTreeNode* value);
+        void printChildrenFirst(BPTreeNode* node);
     public:
         BPlusTree();
         BPlusTree(int maxNumOfKeys);

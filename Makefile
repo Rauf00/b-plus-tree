@@ -1,2 +1,2 @@
 all:
-	g++ -g -Wall main.cpp BPlusTree.cpp BPTreeNode.cpp
+	g++ -g -Wall -std=c++11 main.cpp BPlusTree.cpp BPTreeNode.cpp
