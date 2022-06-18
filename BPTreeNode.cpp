@@ -14,6 +14,17 @@ BPTreeNode::BPTreeNode(int maxNumOfKeys) {
     currNumOfKeys = 0;
 }
 
+BPTreeNode::BPTreeNode(const BPTreeNode& node) {
+    cout << "copy" << endl;
+    keys = node.keys;
+    children = node.children;
+    values = node.values;
+    parent = node.parent;
+    isLeaf = node.isLeaf;
+    nextLeafNode = node.nextLeafNode;
+    currNumOfKeys = node.currNumOfKeys;
+}
+
 // // BPTreeLeafNode class implementation
 // BPTreeLeafNode::BPTreeLeafNode(int maxNumOfKeys): BPTreeNode(maxNumOfKeys) {
 //     vector<string> valuesVector(maxNumOfKeys + 1);

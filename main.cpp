@@ -77,7 +77,19 @@ int main() {
     tree.printKeys();
     cout << "----------------" << endl;
 
-    tree.printValues();
+    // tree.printValues();
+    // cout << "----------------" << endl;
+
+    tree.remove(19);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    // tree.remove(100);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    tree.remove(45);
+    tree.printKeys();
     cout << "----------------" << endl;
 
     return 0;

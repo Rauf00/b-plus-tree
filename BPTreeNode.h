@@ -15,6 +15,7 @@ class BPTreeNode {
         friend class BPlusTree;
     public:
         BPTreeNode(int maxNumOfKeys);
+        BPTreeNode(const BPTreeNode& node);
         virtual ~BPTreeNode(){};
 };
 
