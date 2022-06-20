@@ -14,7 +14,6 @@ BPTreeNode::BPTreeNode(int maxNumOfKeys) {
 }
 
 BPTreeNode::BPTreeNode(const BPTreeNode& node) {
-    cout << "copy" << endl;
     keys = node.keys;
     children = node.children;
     values = node.values;
@@ -25,7 +24,6 @@ BPTreeNode::BPTreeNode(const BPTreeNode& node) {
 }
 
 BPTreeNode& BPTreeNode::operator = (const BPTreeNode& node) { 
-    cout << "in = op" << endl;
     if(this == &node){
         return *this;
     }

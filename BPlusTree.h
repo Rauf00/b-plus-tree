@@ -16,13 +16,16 @@ class BPlusTree {
         bool insertToInteriorNode(BPTreeNode* node, int key, BPTreeNode* value);
         void printChildrenFirst(BPTreeNode* node);
         BPTreeNode* copyLeafToTemp(BPTreeNode* tmpNode, BPTreeNode* leaf);
-        bool distributeValuesBetweenNodes(BPTreeNode* tmpNode, BPTreeNode* node1, BPTreeNode* node2);
+        bool distributeValuesBetweenNodes(BPTreeNode* tmpNode, BPTreeNode* node1, BPTreeNode* node2, bool adjustNextPointers);
         bool removeFromParent(BPTreeNode* child, BPTreeNode* parent, int childIndex);
         bool distributeChildrenBetweenNodes(BPTreeNode* tmpNode, BPTreeNode* node1, BPTreeNode* node2);
         BPTreeNode* copyInteriorToTemp(BPTreeNode* temp, BPTreeNode* node);
     public:
         BPlusTree();
         BPlusTree(int maxNumOfKeys);
+        BPlusTree(const BPlusTree& tree);
+        BPlusTree& operator = (const BPlusTree& tree);
+        ~BPlusTree();
         bool insert(int, string);
         bool remove(int);
         string find(int);

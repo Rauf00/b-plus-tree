@@ -80,84 +80,127 @@ int main() {
     tree.printValues();
     cout << "----------------" << endl;
 
+    cout << "\n\n REMOVAL \n\n";
+
+    // TEST CASES FROM LECTURE SLIDES
+    // cout << "REMOVE 19" << endl;
     // tree.remove(19);
     // tree.printKeys();
     // cout << "----------------" << endl;
 
-    // tree.remove(100);
-    // tree.printKeys();
-    // cout << "----------------" << endl;
-
+    // cout << "REMOVE 45" << endl;
     // tree.remove(45);
     // tree.printKeys();
     // cout << "----------------" << endl;
-    cout << "\n\n REMOVAL \n\n";
+
+    cout << "REMOVE 9" << endl;
     tree.remove(9);
     tree.printKeys();
     cout << "----------------" << endl;
 
+    cout << "REMOVE 6" << endl;
     tree.remove(6);
     tree.printKeys();
     cout << "----------------" << endl;
 
+    cout << "REMOVE 8" << endl;
     tree.remove(8);
     tree.printKeys();
     cout << "----------------" << endl;
 
-    tree.remove(23);
-    tree.printKeys();
-    cout << "----------------" << endl;
+    tree.printValues();
 
-    tree.remove(31);
-    tree.printKeys();
-    cout << "----------------" << endl;
+    // cout << "REMOVE 9" << endl;
+    // tree.remove(9);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
 
-    tree.remove(51);
-    tree.printKeys();
-    cout << "----------------" << endl;
+    // cout << "REMOVE 6" << endl;
+    // tree.remove(6);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
 
-    tree.remove(45);
-    tree.printKeys();
-    cout << "----------------" << endl;
+    // cout << "REMOVE 60" << endl;
+    // tree.remove(60);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
 
-    tree.remove(39);
-    tree.printKeys();
-    cout << "----------------" << endl;
-
-    tree.remove(21);
-    tree.printKeys();
-    cout << "----------------" << endl;
-
-    tree.remove(19);
-    tree.printKeys();
-    cout << "----------------" << endl;
-
-    tree.remove(7);
-    tree.printKeys();
-    cout << "----------------" << endl;
-
-    tree.remove(11);
-    tree.printKeys();
-    cout << "----------------" << endl;
-
-    tree.remove(5);
-    tree.printKeys();
-    cout << "----------------" << endl;
-
-    tree.remove(2);
-    tree.printKeys();
-    cout << "----------------" << endl;
-
-    tree.remove(60);
-    tree.printKeys();
-    cout << "----------------" << endl;
-
+    // cout << "REMOVE 64" << endl;
     // tree.remove(64);
     // tree.printKeys();
     // cout << "----------------" << endl;
 
-    // tree.printValues();
+    // cout << "REMOVE 97" << endl;
+    // tree.remove(97);
+    // tree.printKeys();
     // cout << "----------------" << endl;
+
+    // cout << "REMOVE 8" << endl;
+    // tree.remove(8);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 5" << endl;
+    // tree.remove(5);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 2" << endl;
+    // tree.remove(2);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 19" << endl;
+    // tree.remove(19);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 45" << endl;
+    // tree.remove(45);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 11" << endl;
+    // tree.remove(11);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 7" << endl;
+    // tree.remove(7);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 51" << endl;
+    // tree.remove(51);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 39" << endl;
+    // tree.remove(39);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 31" << endl;
+    // tree.remove(31);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 21" << endl;
+    // tree.remove(21);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 23" << endl;
+    // tree.remove(23);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // cout << "REMOVE 77" << endl;
+    // tree.remove(77);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // tree.printValues();
 
     return 0;
 }
