@@ -8,14 +8,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Jun 17 12:55:34 2022
+# Make data base, printed on Sun Jun 19 12:53:30 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
- 
 ?F = $(notdir $?)
 # environment
 VSCODE_LOG_NATIVE = false
@@ -44,15 +43,16 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/dd/2sk2zf7j1wv0jkhkwl_3450h0000gn/T/vscode-ipc-efef6b6d-dd00-43a3-8c43-30d4fee7af51.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dd/2sk2zf7j1wv0jkhkwl_3450h0000gn/T/vscode-ipc-1fbf7819-aae5-4b7c-b23c-25675152535e.sock
 # environment
 VSCODE_CWD = /
 # environment
+ 
 PATH = /Users/raufshimarov/.nvm/versions/node/v18.0.0/bin:/Users/raufshimarov/opt/anaconda3/bin:/Users/raufshimarov/opt/anaconda3/condabin:/Users/raufshimarov/.cabal/bin:/Users/raufshimarov/.ghcup/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin
 # environment
 NVM_BIN = /Users/raufshimarov/.nvm/versions/node/v18.0.0/bin
 # environment
-LaunchInstanceID = F89F4139-763C-46C5-A684-3C54D04E59BD
+LaunchInstanceID = 0FCECE2D-B82B-45DD-8835-CAF9C53156DE
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -60,7 +60,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4TDaoICbBj/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.mHx59e2yrA/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -170,7 +170,7 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/raufshimarov/opt/anaconda3
 # environment
-VSCODE_PID = 545
+VSCODE_PID = 559
 # environment
 _CE_CONDA = 
 # environment
@@ -184,7 +184,7 @@ LANG = C
 
 # Directories
 
-# . (device 16777232, inode 14037886): 12 files, no impossibilities.
+# . (device 16777233, inode 14037886): 12 files, no impossibilities.
 
 # 12 files, no impossibilities in 1 directories.
 
@@ -257,6 +257,6 @@ Makefile:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jun 17 12:55:34 2022
+# Finished Make data base on Sun Jun 19 12:53:30 2022
 
  

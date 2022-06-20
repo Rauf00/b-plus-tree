@@ -67,6 +67,8 @@
         "utility": "cpp",
         "queue": "cpp",
         "deque": "cpp",
-        "__memory": "cpp"
+        "__memory": "cpp",
+        "memory_resource": "cpp",
+        "__functional_03": "cpp"
     }
 }

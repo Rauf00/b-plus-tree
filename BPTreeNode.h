@@ -16,23 +16,6 @@ class BPTreeNode {
     public:
         BPTreeNode(int maxNumOfKeys);
         BPTreeNode(const BPTreeNode& node);
-        virtual ~BPTreeNode(){};
+        BPTreeNode& operator = (const BPTreeNode& node);
+        ~BPTreeNode();
 };
-
-
-
-// class BPTreeLeafNode : public BPTreeNode {
-//     protected:
-//         vector<string*> values;
-//     public:
-//         BPTreeLeafNode(int maxNumOfKeys);
-//         ~BPTreeLeafNode(){};
-// };
-
-// class BPTreeInteriorNode : public virtual BPTreeNode {
-//     protected:
-//         vector<BPTreeNode*> children;
-//     public:
-//         BPTreeInteriorNode(int maxNumOfKeys);
-//         ~BPTreeInteriorNode(){};
-// };

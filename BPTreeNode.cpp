@@ -4,7 +4,6 @@ BPTreeNode::BPTreeNode(int maxNumOfKeys) {
     vector<int> keysVector(maxNumOfKeys);
     vector<BPTreeNode*> childrenVector(maxNumOfKeys + 1, NULL);
     vector<string*> valuesVector(maxNumOfKeys);
-    
     keys = keysVector;
     children = childrenVector;
     values = valuesVector;
@@ -25,14 +24,23 @@ BPTreeNode::BPTreeNode(const BPTreeNode& node) {
     currNumOfKeys = node.currNumOfKeys;
 }
 
-// // BPTreeLeafNode class implementation
-// BPTreeLeafNode::BPTreeLeafNode(int maxNumOfKeys): BPTreeNode(maxNumOfKeys) {
-//     vector<string> valuesVector(maxNumOfKeys + 1);
-//     values = valuesVector;
-// }
+BPTreeNode& BPTreeNode::operator = (const BPTreeNode& node) { 
+    cout << "in = op" << endl;
+    if(this == &node){
+        return *this;
+    }
+    keys = node.keys;
+    children = node.children;
+    values = node.values;
+    parent = node.parent;
+    isLeaf = node.isLeaf;
+    nextLeafNode = node.nextLeafNode;
+    currNumOfKeys = node.currNumOfKeys;
+    return *this;
+}
 
-// // BPTreeInteriorNode class implementation
-// BPTreeInteriorNode::BPTreeInteriorNode(int maxNumOfKeys): BPTreeNode(maxNumOfKeys) {
-//     vector<BPTreeNode*> childrenVector(maxNumOfKeys + 1);
-//     children = childrenVector;
-// }
+BPTreeNode::~BPTreeNode() {
+    keys.clear();
+    children.clear();
+    values.clear();
+}

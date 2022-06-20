@@ -77,20 +77,87 @@ int main() {
     tree.printKeys();
     cout << "----------------" << endl;
 
-    // tree.printValues();
-    // cout << "----------------" << endl;
-
-    tree.remove(19);
-    tree.printKeys();
+    tree.printValues();
     cout << "----------------" << endl;
+
+    // tree.remove(19);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
 
     // tree.remove(100);
     // tree.printKeys();
     // cout << "----------------" << endl;
 
+    // tree.remove(45);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+    cout << "\n\n REMOVAL \n\n";
+    tree.remove(9);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(6);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(8);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(23);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(31);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(51);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
     tree.remove(45);
     tree.printKeys();
     cout << "----------------" << endl;
+
+    tree.remove(39);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(21);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(19);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(7);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(11);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(5);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(2);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    tree.remove(60);
+    tree.printKeys();
+    cout << "----------------" << endl;
+
+    // tree.remove(64);
+    // tree.printKeys();
+    // cout << "----------------" << endl;
+
+    // tree.printValues();
+    // cout << "----------------" << endl;
 
     return 0;
 }
