@@ -9,7 +9,7 @@ class BPTreeNode {
         int currNumOfKeys;
         BPTreeNode* parent;
         vector<BPTreeNode*> children;
-        vector<string*> values;
+        vector<string> values;
         BPTreeNode* nextLeafNode;
         bool isLeaf;
         friend class BPlusTree;

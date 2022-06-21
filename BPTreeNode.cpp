@@ -3,7 +3,7 @@
 BPTreeNode::BPTreeNode(int maxNumOfKeys) {
     vector<int> keysVector(maxNumOfKeys);
     vector<BPTreeNode*> childrenVector(maxNumOfKeys + 1, NULL);
-    vector<string*> valuesVector(maxNumOfKeys);
+    vector<string> valuesVector(maxNumOfKeys);
     keys = keysVector;
     children = childrenVector;
     values = valuesVector;

@@ -34,7 +34,7 @@ BPlusTree::~BPlusTree() {
     delete root;
 }
 
-bool BPlusTree::insertToLeafNode(BPTreeNode* node, int key, string* value) {
+bool BPlusTree::insertToLeafNode(BPTreeNode* node, int key, string value) {
     int i = 0; 
     // find key index where to insert
     while (i < (int) node->keys.size() && key > node->keys.at(i)){
@@ -165,7 +165,7 @@ BPTreeNode* BPlusTree::copyLeafToTemp(BPTreeNode* tmpNode, BPTreeNode* leaf) {
     for(int i = 0; i < leaf->currNumOfKeys; i++) {
         tmpNode->keys.at(i) = leaf->keys.at(i);
         tmpNode->values.at(i) = leaf->values.at(i);
-        leaf->values.at(i) = 0;
+        leaf->values.at(i) = "";
         leaf->keys.at(i) = 0;
         tmpNode->currNumOfKeys++;
     }
@@ -199,7 +199,7 @@ bool BPlusTree::insert(int key, string value){
     if(root == NULL) {
         root = new BPTreeNode(maxNumOfKeys);
         root->keys.at(0) = key;
-        root->values.at(0) = &value;
+        root->values.at(0) = value;
         root->currNumOfKeys += 1;
         root->isLeaf = true;
     } else {
@@ -213,7 +213,7 @@ bool BPlusTree::insert(int key, string value){
 
         // if leaf is not full
         if (curr->currNumOfKeys < maxNumOfKeys) {
-            insertToLeafNode(curr, key, &value); 
+            insertToLeafNode(curr, key, value); 
         } 
         // if leaf is full
         else {
@@ -224,7 +224,7 @@ bool BPlusTree::insert(int key, string value){
             BPTreeNode* tmpNode = new BPTreeNode(maxNumOfKeys + 1);
             tmpNode = copyLeafToTemp(tmpNode, curr);
             // insert new value to temp
-            insertToLeafNode(tmpNode, key, &value);
+            insertToLeafNode(tmpNode, key, value);
             // distribute values from temp between orig and new node
             distributeValuesBetweenNodes(tmpNode, curr, newNode, true);
             delete tmpNode;
@@ -386,6 +386,7 @@ bool BPlusTree::removeFromParent(BPTreeNode* child, BPTreeNode* parent, int chil
             removeFromParent(curr, currParent, i);
         }
     }
+    return true;
 }
 
 bool BPlusTree::remove(int key) {
@@ -419,7 +420,6 @@ bool BPlusTree::remove(int key) {
     
     // if leaf doesnt have enough keys
     if(curr->currNumOfKeys < halfNumOfKeys && curr != root) {
-        cout << "here" << endl;
         BPTreeNode* currParent = curr->parent;
         int i = 0;
         // find the index of the curr in its parent children vector
@@ -453,7 +453,7 @@ bool BPlusTree::remove(int key) {
         // if there is a right sibling (there are currNumOfKeys + 1 )
         if (i < currParent->currNumOfKeys) {
             BPTreeNode* rightSibling = currParent->children.at(i + 1);
-            // if left sibling has enough keys to distribute
+            // if right sibling has enough keys to distribute
             if(rightSibling->currNumOfKeys > halfNumOfKeys) {
                 BPTreeNode* tmpNode = new BPTreeNode(maxNumOfKeys + 1);
                 tmpNode = copyLeafToTemp(tmpNode, rightSibling);
@@ -494,7 +494,7 @@ bool BPlusTree::remove(int key) {
             while (prev->children.at(0) != NULL) {
                 prev = prev->children.at(0);
             }
-            while (prev->nextLeafNode != curr) {
+            while (prev != curr && prev->nextLeafNode != curr) {
                 prev = prev->nextLeafNode;
             }
             prev->nextLeafNode = rightSibling;
@@ -540,12 +540,11 @@ string BPlusTree::find(int key) {
     if (leaf != NULL) {
         for (int i = 0; i < (int) leaf->keys.size(); i++) {
             if(leaf->keys.at(i) == key) {
-                cout << "found at " << i<<endl;
-                return *leaf->values.at(i);
+                return leaf->values.at(i);
             }
         }
     }
-    return "Not Found";
+    return "";
 }
 
 void BPlusTree::printKeysHelper(BPTreeNode* node) {
@@ -556,12 +555,12 @@ void BPlusTree::printKeysHelper(BPTreeNode* node) {
             cout << ",";
         }
     }
-    if (node->parent) {
-        cout << "--parents: " << node->parent->keys.at(0) << " ";
-    }
-    if(node->children.at(0)){
-        printChildrenFirst(node);
-    }
+    // if (node->parent) {
+    //     cout << "--parents: " << node->parent->keys.at(0) << " ";
+    // }
+    // if(node->children.at(0)){
+    //     printChildrenFirst(node);
+    // }
     cout << "] ";
 }
 
@@ -600,7 +599,7 @@ void BPlusTree::printKeys() {
 
 void BPlusTree::printValuesHelper(BPTreeNode* node) {
     for(int i = 0; i < node->currNumOfKeys; i++) {
-        cout << *node->values.at(i) << endl;
+        cout << node->values.at(i) << endl;
     }
 }
 

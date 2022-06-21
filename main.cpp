@@ -110,6 +110,11 @@ int main() {
 
     tree.printValues();
 
+    cout << "----------------" << endl;
+    cout << tree.find(77) << endl;
+    cout << tree.find(200) << endl;
+
+    // MY TEST CASES
     // cout << "REMOVE 9" << endl;
     // tree.remove(9);
     // tree.printKeys();
