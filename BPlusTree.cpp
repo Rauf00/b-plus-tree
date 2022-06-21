@@ -324,6 +324,7 @@ bool BPlusTree::removeFromParent(BPTreeNode* child, BPTreeNode* parent, int chil
                 }
                 curr->keys.at(0) = leftSibling->keys.at(leftSibling->currNumOfKeys - 1);
                 curr->children.at(0) = leftSibling->children.at(leftSibling->currNumOfKeys);
+                leftSibling->children.at(leftSibling->currNumOfKeys)->parent = curr;
                 // remove last key from left sibling
                 leftSibling->keys.at(leftSibling->currNumOfKeys - 1) = 0;
                 // remove last child from the left sibling
