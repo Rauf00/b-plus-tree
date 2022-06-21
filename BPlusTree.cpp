@@ -31,7 +31,23 @@ BPlusTree& BPlusTree::operator = (const BPlusTree& tree) {
 }
 
 BPlusTree::~BPlusTree() {
-    delete root;
+    queue <BPTreeNode*> que;
+    BPTreeNode* parent;
+    que.push(root); //insert the root at first
+    while(!que.empty()){
+        int currLen = que.size();
+        while (currLen > 0){
+            parent = que.front(); //get the element from the front end
+            for(int i = 0; i < parent->currNumOfKeys + 1; i++) {
+                if(parent->children.at(i) != NULL) { //When left child is present, insert into queue
+                    que.push(parent->children.at(i));
+                }
+            }
+            delete parent;
+            que.pop(); //remove the item from queue
+            currLen--;
+        }
+    }
 }
 
 bool BPlusTree::insertToLeafNode(BPTreeNode* node, int key, string value) {
@@ -363,6 +379,7 @@ bool BPlusTree::removeFromParent(BPTreeNode* child, BPTreeNode* parent, int chil
             // take value from parent
             leftSibling->keys.at(leftSibling->currNumOfKeys - 1) = currParent->keys.at(currParent->currNumOfKeys - 1);
             removeFromParent(curr, currParent, i);
+            delete curr;
         }
 
         // if right sibling is not half full
@@ -384,6 +401,7 @@ bool BPlusTree::removeFromParent(BPTreeNode* child, BPTreeNode* parent, int chil
             // take value from parent and put it into right siblings first position
             rightSibling->keys.at(0) = currParent->keys.at(0);
             removeFromParent(curr, currParent, i);
+            delete curr;
         }
     }
     return true;
@@ -412,7 +430,7 @@ bool BPlusTree::remove(int key) {
     // if no items in the root, delete root
     if (curr == root && root->currNumOfKeys == 0) {
         root = NULL;
-        delete root;
+        delete curr;
         return true;
     } 
     
