@@ -526,7 +526,7 @@ bool BPlusTree::remove(int key) {
             return true;
         }
     }
-    return false;
+    return true;
 }
 
 BPTreeNode* BPlusTree::findLeaf(int key, bool rangeFlag) {
