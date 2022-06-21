@@ -31,6 +31,9 @@ BPlusTree& BPlusTree::operator = (const BPlusTree& tree) {
 }
 
 BPlusTree::~BPlusTree() {
+    if(root == NULL) {
+        return;
+    }
     queue <BPTreeNode*> que;
     BPTreeNode* parent;
     que.push(root); //insert the root at first
@@ -463,7 +466,7 @@ bool BPlusTree::remove(int key) {
                 }
                 distributeValuesBetweenNodes(tmpNode, leftSibling, curr, false);
                 // replace the removed key by the first key of curr in the parent
-                currParent->keys.at(i) = curr->keys.at(0);
+                currParent->keys.at(i - 1) = curr->keys.at(0);
                 delete tmpNode;
                 return true;
             }
