@@ -17,20 +17,40 @@ BPlusTree::BPlusTree(int aNumOfKeys) {
 }
 
 BPlusTree::BPlusTree(const BPlusTree& tree) {
-    root = tree.root;
+    root = copyTreeHelper(tree.root);
     maxNumOfKeys = tree.maxNumOfKeys;
+}
+
+BPTreeNode* BPlusTree::copyTreeHelper(BPTreeNode* root) {
+    if( root == NULL){
+		return NULL;
+	}
+	BPTreeNode *newNode = new BPTreeNode(*root);
+	for( int i = 0; i <= root->currNumOfKeys + 1; i++){
+		newNode->children[i] = copyTreeHelper(root->children[i]);
+	}
+	return newNode;
 }
 
 BPlusTree& BPlusTree::operator = (const BPlusTree& tree) {
-    if(this == &tree){
-        return *this;
-    }
-    root = tree.root;
-    maxNumOfKeys = tree.maxNumOfKeys;
-    return *this;
+    if(this != &tree){
+		deleteTree(root);
+		if(tree.root == NULL){
+			root = NULL;
+			return *this;
+		}
+		else{
+			root = copyTreeHelper(tree.root);
+		}
+	}
+	return *this;
 }
 
 BPlusTree::~BPlusTree() {
+    deleteTree(root);
+}
+
+void BPlusTree::deleteTree(BPTreeNode* root) {
     if(root == NULL) {
         return;
     }

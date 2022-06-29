@@ -7,6 +7,8 @@ class BPlusTree {
     private:
         BPTreeNode* root;
         int maxNumOfKeys;
+        BPTreeNode* copyTreeHelper(BPTreeNode* root);
+        void deleteTree(BPTreeNode* root);
         BPTreeNode* findLeaf(int key, bool rangeFlag);
         bool insertToLeafNode(BPTreeNode* node, int key, string value);
         bool insertToParent(BPTreeNode* node, BPTreeNode* child, int key);
