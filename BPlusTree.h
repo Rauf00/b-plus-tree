@@ -26,6 +26,7 @@ class BPlusTree {
         BPlusTree(int maxNumOfKeys);
         BPlusTree(const BPlusTree& tree);
         BPlusTree& operator = (const BPlusTree& tree);
+        // void testBPTreeNodeOverloadOp();
         ~BPlusTree();
         bool insert(int, string);
         bool remove(int);

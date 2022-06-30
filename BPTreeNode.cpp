@@ -24,16 +24,15 @@ BPTreeNode::BPTreeNode(const BPTreeNode& node) {
 }
 
 BPTreeNode& BPTreeNode::operator = (const BPTreeNode& node) { 
-    if(this == &node){
-        return *this;
+    if(this != &node){
+        keys = node.keys;
+        children = node.children;
+        values = node.values;
+        parent = node.parent;
+        isLeaf = node.isLeaf;
+        nextLeafNode = node.nextLeafNode;
+        currNumOfKeys = node.currNumOfKeys;
     }
-    keys = node.keys;
-    children = node.children;
-    values = node.values;
-    parent = node.parent;
-    isLeaf = node.isLeaf;
-    nextLeafNode = node.nextLeafNode;
-    currNumOfKeys = node.currNumOfKeys;
     return *this;
 }
 

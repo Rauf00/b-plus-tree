@@ -46,6 +46,17 @@ BPlusTree& BPlusTree::operator = (const BPlusTree& tree) {
 	return *this;
 }
 
+// void BPlusTree::testBPTreeNodeOverloadOp() {
+//     BPTreeNode node1(3);
+//     BPTreeNode node2(3);
+//     cout << node1.currNumOfKeys << endl;
+//     cout << node2.currNumOfKeys << endl;
+//     node1.currNumOfKeys = 2;
+//     node2 = node1;
+//     cout << node1.currNumOfKeys << endl;
+//     cout << node2.currNumOfKeys << endl;
+// }
+
 BPlusTree::~BPlusTree() {
     deleteTree(root);
 }
