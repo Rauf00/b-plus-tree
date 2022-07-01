@@ -445,6 +445,9 @@ bool BPlusTree::removeFromParent(BPTreeNode* child, BPTreeNode* parent, int chil
 
 bool BPlusTree::remove(int key) {
     // find a leaf where key might be located 
+    if(root == NULL) {
+        return false;
+    }
     BPTreeNode* curr = findLeaf(key, true);
 
     // if key is not in curr, key is not in the tree, so return false
