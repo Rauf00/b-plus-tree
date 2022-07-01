@@ -27,6 +27,9 @@ BPTreeNode* BPlusTree::copyTreeHelper(BPTreeNode* root) {
 	}
 	BPTreeNode *newNode = new BPTreeNode(*root);
 	for( int i = 0; i <= root->currNumOfKeys + 1; i++){
+        if (newNode->children[i]) {
+            newNode->children[i]->parent = newNode;
+        }
 		newNode->children[i] = copyTreeHelper(root->children[i]);
 	}
 	return newNode;
@@ -321,10 +324,10 @@ bool BPlusTree::removeFromParent(BPTreeNode* child, BPTreeNode* parent, int chil
     BPTreeNode* curr = parent;
     
     // remove child from curr using its index
-    for(int i = childIndex; i < curr->currNumOfKeys + 1; i++) {
+    for(int i = childIndex; i < curr->currNumOfKeys; i++) {
         curr->children.at(i) = curr->children.at(i + 1);
     }
-    for(int i = childIndex - 1; i < curr->currNumOfKeys; i++) {
+    for(int i = childIndex - 1; i < curr->currNumOfKeys - 1; i++) {
         if (i < 0) {
             continue;
         }

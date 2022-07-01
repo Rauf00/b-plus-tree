@@ -112,13 +112,18 @@ int main() {
 
     cout << " ****** OTHER TESTS ******" << endl;
     // // TEST: BPlusTree copy constructor and = op
-    // BPlusTree testCopy(test);
-    // BPlusTree test2(4);
-    // test2 = test;
-    // test.remove(102); // make sure a deep copy was created in both cases
-    // test.printKeys();
-    // testCopy.printKeys();
-    // test2.printKeys();
+    BPlusTree testCopy(test);
+    BPlusTree test2(4);
+    test2 = test;
+    test.remove(10);
+    test.remove(47);
+    test.remove(56);
+    test.remove(87);
+    testCopy.remove(1);
+    test2.remove(3);
+    test.printKeys();
+    testCopy.printKeys();
+    test2.printKeys();
 
     // // TEST: BPTreeNode = op
     // test.testBPTreeNodeOverloadOp();
